@@ -45,8 +45,15 @@ class mikrotikapi extends Controller
             'key-usage' => 'tls-client'
            ]
         ]);
-
-        return view('home');
+        $response = $client->request('POST','https://core.tulangbawangkab.go.id/rest/certificate/sign',[
+           'auth' => ['duplex', '#P4ssw0rd#1234'],
+           'json' => [
+            'number' => $req->name,
+            'ca' => 'CA'
+           ]
+        ]);
+        return view('ike2');
 
     }
+    
 }

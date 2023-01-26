@@ -23,7 +23,11 @@ Route::get('/regl2tp', function () {
     return view('regl2tp');
 });
 
-
-// Route::get('/', [mikrotikapi::class, 'index']);
 Route::post('/regl2tp', [mikrotikapi::class, 'regl2tp'])->name('regl2tp');
 
+Route::get('/regike2', function () {
+    return view('regike2');
+});
+
+Route::post('/regike2', [mikrotikapi::class, 'regike2'])->name('regike2');
+// Route::get('/regike2', [mikrotikapi::class, 'regike2'])->name('regike2');
