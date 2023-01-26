@@ -6,7 +6,9 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class mikrotikapi extends Controller
+
 {
+  
     public function index(){
          $client = new Client();
          $response = $client->request('GET','https://core.tulangbawangkab.go.id/rest/ip/address',[
@@ -52,6 +54,14 @@ class mikrotikapi extends Controller
             'ca' => 'CA'
            ]
         ]);
+        $response = $client->request('POST','https://core.tulangbawangkab.go.id/rest/certificate/export-certificate',[
+         'auth' => ['duplex', '#P4ssw0rd#1234'],
+         'json' => [
+          'numbers' => $req->name,
+          'file-name' => 'certificate/'.$req->name,
+          'type' => 'pkcs12'  
+         ]
+      ]);
         return view('ike2');
 
     }

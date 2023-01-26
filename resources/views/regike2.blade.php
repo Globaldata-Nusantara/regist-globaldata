@@ -17,6 +17,12 @@
         </div>
       </div>
       <div class="form-check">
+        <input class="form-check" type="radio" name="dayvalid" value="60" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          60
+        </label>
+      </div>
+      <div class="form-check">
         <input class="form-check" type="radio" name="dayvalid" value="90" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">
           90
